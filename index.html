@@ -29,7 +29,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
+            padding: 15px 40px;
             background-color: rgba(11, 15, 25, 0.85);
             backdrop-filter: blur(10px);
             position: sticky;
@@ -46,18 +46,16 @@
             font-size: 1.1rem;
             letter-spacing: 1px;
             color: #fff;
+            text-decoration: none;
         }
 
-        .logo-box {
-            background-color: var(--accent-orange);
-            color: #0b0f19;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 6px;
-            font-weight: 900;
+        .logo-img-nav {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-orange);
+            box-shadow: 0 0 10px rgba(249, 115, 22, 0.4);
         }
 
         .discord-btn {
@@ -84,9 +82,29 @@
 
         /* Hero section */
         .hero {
-            padding: 60px 40px 40px 40px;
+            padding: 50px 40px 30px 40px;
             max-width: 1400px;
             margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .hero-logo-large {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-orange);
+            box-shadow: 0 0 30px rgba(249, 115, 22, 0.3);
+            flex-shrink: 0;
         }
 
         .subtitle-tag {
@@ -95,14 +113,14 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             display: inline-block;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             line-height: 1.1;
-            margin: 0 0 20px 0;
+            margin: 0 0 15px 0;
             font-weight: 800;
             color: #ffffff;
             letter-spacing: -1px;
@@ -114,9 +132,9 @@
 
         .hero p {
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             max-width: 700px;
-            margin-bottom: 30px;
+            margin: 0;
         }
 
         /* Main Grid Container (Two Columns) */
@@ -263,7 +281,7 @@
 
     <header>
         <div class="logo-area">
-            <div class="logo-box">M</div>
+            <img src="logo.png" alt="Messina RP Logo" class="logo-img-nav">
             <span>MESSINA RP</span>
         </div>
         <a href="https://discord.gg/HGA43G6Nj" target="_blank" class="discord-btn">
@@ -273,9 +291,12 @@
     </header>
 
     <div class="hero">
-        <div class="subtitle-tag">✦ Regolamento Ufficiale</div>
-        <h1>MESSINA <span>RP</span></h1>
-        <p>Tutte le regole ufficiali di Messina RP raccolte in un'unica pagina. Leggi attentamente il regolamento Game e Discord per vivere una community seria, corretta e divertente.</p>
+        <img src="logo.png" alt="Messina RP Logo" class="hero-logo-large">
+        <div>
+            <div class="subtitle-tag">✦ Regolamento Ufficiale</div>
+            <h1>MESSINA <span>RP</span></h1>
+            <p>Tutte le regole ufficiali di Messina RP raccolte in un'unica pagina. Leggi attentamente il regolamento Game e Discord per vivere una community seria, corretta e divertente.</p>
+        </div>
     </div>
 
     <div class="content-grid">
@@ -402,7 +423,7 @@
                 <ul>
                     <li>Pratiche di spam, flood o uso smodato di maiuscole sono severamente censurate.</li>
                     <li>È tassativamente vietato l'uso di bestemmie o espressioni blasfeme.</li>
-                    <li>Nei canali vocali è vietato arrecare disturbo o molestare i partecipanti.</li>
+                    <li>Nei vocali è vietato arrecare disturbo o molestare i partecipanti.</li>
                     <li>⚠️ <strong>Nota:</strong> Chi effettua spam, flood o scrive in grande riceverà un TIMEOUT immediato.</li>
                 </ul>
             </div>
