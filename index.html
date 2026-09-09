@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messina RP | Regolamento Ufficiale</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #111827;
+            --card-border: #1f2937;
+            --accent-orange: #f97316;
+            --accent-blue: #38bdf8;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Header / Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        .logo-box {
+            background-color: var(--accent-orange);
+            color: #0b0f19;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            font-weight: 900;
+        }
+
+        .discord-btn {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--accent-blue);
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+        }
+
+        .discord-btn:hover {
+            background-color: var(--accent-blue);
+            color: var(--bg-color);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+        }
+
+        /* Hero section */
+        .hero {
+            padding: 60px 40px 40px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .subtitle-tag {
+            color: var(--accent-orange);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin: 0 0 20px 0;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--accent-orange);
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        /* Main Grid Container (Two Columns) */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto 80px auto;
+            padding: 0 40px;
+        }
+
+        @media (max-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .column-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .column-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+        }
+
+        .game-card::before {
+            background: linear-gradient(90deg, var(--accent-orange), var(--accent-blue));
+        }
+
+        .discord-card::before {
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-orange));
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+        }
+
+        .card-title-area h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        .card-title-area p {
+            margin: 4px 0 0 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Section blocks inside cards */
+        .rule-section {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .rule-section h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--accent-blue);
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ban-box {
+            background-color: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #ef4444;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 15px;
+            color: #fca5a5;
+            font-weight: 600;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: var(--text-main);
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        strong {
+            color: var(--accent-orange);
+        }
+
+        .table-custom {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .table-custom th, .table-custom td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--card-border);
+            font-size: 0.9rem;
+        }
+
+        .table-custom th {
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--card-border);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <div class="logo-box">M</div>
+            <span>MESSINA RP</span>
+        </div>
+        <a href="https://discord.gg/HGA43G6Nj" target="_blank" class="discord-btn">
+            <span>ENTRA NEL DISCORD</span>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+        </a>
+    </header>
+
+    <div class="hero">
+        <div class="subtitle-tag">✦ Regolamento Ufficiale</div>
+        <h1>MESSINA <span>RP</span></h1>
+        <p>Tutte le regole ufficiali di Messina RP raccolte in un'unica pagina. Leggi attentamente il regolamento Game e Discord per vivere una community seria, corretta e divertente.</p>
+    </div>
+
+    <div class="content-grid">
+        <!-- COLONNA SINISTRA: REGOLAMENTO GAME -->
+        <div class="column-card game-card">
+            <div class="card-header">
+                <div class="card-icon">🎮</div>
+                <div class="card-title-area">
+                    <h2>Regolamento Game</h2>
+                    <p>Le norme da rispettare durante il Roleplay su Emergency Hamburg.</p>
+                </div>
+            </div>
+
+            <div class="rule-section">
+                <h3>1. Comportamento RP Scorretto</h3>
+                <div class="ban-box">
+                    🚫 SANZIONI GRAVI / BAN PERMANENTE
+                </div>
+                <ul>
+                    <li>Vietato l'uso di chiodi stradali (Stop Stick), esplosivi e cariche C4.</li>
+                    <li>Le granate stordenti (Flashbang) e il GPS possono essere usati esclusivamente dai reparti speciali e dai militari.</li>
+                    <li>Il radar per la velocità può essere utilizzato solo dalla Polizia Locale.</li>
+                    <li>È vietato compiere azioni volgari o non appropriate.</li>
+                    <li>È severamente vietato sottrarsi ai controlli o alle richieste dello staff (Evading Staff).</li>
+                </ul>
+                <h4 style="color: #38bdf8; margin: 15px 0 8px 0; font-size: 0.95rem;">📌 Definizioni:</h4>
+                <ul>
+                    <li><strong>Fail RP:</strong> Comportamenti o azioni illogiche.</li>
+                    <li><strong>No Fear:</strong> Obbligo di temere per la propria vita.</li>
+                    <li><strong>Powergaming:</strong> Costringere gli altri a subire azioni senza scampo.</li>
+                    <li><strong>Revenge Kill:</strong> Tornare sul luogo della morte per vendicarsi.</li>
+                    <li><strong>RDM / VDM:</strong> Uccidere o investire senza motivo RP.</li>
+                    <li><strong>Cuff-Rush:</strong> Ammanettare senza contesto o dialogo.</li>
+                    <li><strong>Combat Logging:</strong> Uscire per evitare conseguenze.</li>
+                    <li><strong>No Crash:</strong> Ignorare incidenti stradali gravi.</li>
+                </ul>
+            </div>
+
+            <div class="rule-section">
+                <h3>2. Azioni Vietate</h3>
+                <ul>
+                    <li><strong>Bunny Hopping:</strong> Saltare continuamente per muoversi più velocemente.</li>
+                    <li><strong>Bug Abuse:</strong> Sfruttare glitch di gioco per vantaggi sleali.</li>
+                    <li><strong>Car-Surf:</strong> Viaggiare sul tetto o cofano dei veicoli.</li>
+                    <li><strong>Cop Baiting / Evading:</strong> Provocare le forze dell'ordine senza motivo.</li>
+                </ul>
+            </div>
+
+            <div class="rule-section">
+                <h3>3. Gestione Chat (IC e OOC)</h3>
+                <ul>
+                    <li><strong>IC (In Character):</strong> Azioni e discorsi del personaggio.</li>
+                    <li><strong>OOC (Out Of Character):</strong> Fattori esterni alla vita di gioco.</li>
+                    <li><strong>Metagaming:</strong> Usare informazioni apprese fuori dal gioco.</li>
+                    <li><strong>MixChat:</strong> Mescolare IC e OOC nella stessa frase.</li>
+                    <li><strong>Stream Sniping:</strong> Sfruttare le live altrui.</li>
+                </ul>
+            </div>
+
+            <div class="rule-section">
+                <h3>4. Zone Protette (Safe-Zone)</h3>
+                <ul>
+                    <li>🚔 <strong>Questura</strong> (Uffici interni vietati)</li>
+                    <li>🚒 <strong>Caserma VVFF</strong> | 🏥 <strong>Ospedale</strong></li>
+                    <li>⛓️ <strong>Area Penitenziaria</strong> | 🔧 <strong>Tuning</strong></li>
+                    <li>🏠 <strong>Ville private</strong> | 🪖 <strong>Zone Militari</strong></li>
+                </ul>
+            </div>
+
+            <div class="rule-section">
+                <h3>5. Norme per le Gang</h3>
+                <ul>
+                    <li>Vietato l'uso di esplosivi o entrare nelle ville rivali per provocare.</li>
+                    <li>Vietato l'RDM tra membri della stessa fazione.</li>
+                    <li><strong>Regola degli 1vs1:</strong> Unico luogo autorizzato è il grande parcheggio davanti alla nave al porto (Zona OFF-RP, la polizia non effettua arresti).</li>
+                    <li>Le ville e i ghetti sono Safe-Zone (la polizia spara solo su irruzione formale).</li>
+                </ul>
+            </div>
+
+            <div class="rule-section">
+                <h3>6. Norme e Protocolli Rapine</h3>
+                <table class="table-custom">
+                    <tr><th>Obiettivo</th><th>Guadagno Massimo</th></tr>
+                    <tr><td>Rapimenti Singoli</td><td>Max 500</td></tr>
+                    <tr><td>Negozi / Benzinai</td><td>500 - 2.000</td></tr>
+                    <tr><td>Farm / Tool Shop</td><td>2.000 - 4.000</td></tr>
+                    <tr><td>Nightclub / Club</td><td>4.000 - 6.000</td></tr>
+                    <tr><td>Gioielleria</td><td>6.000 - 8.000</td></tr>
+                    <tr><td>Banca Centrale</td><td>8.000 - 10.000</td></tr>
+                </table>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #94a3b8;">
+                    <strong>Requisiti Riscatto:</strong> Supervisione staff, vittoria dell'azione, apertura ticket con clip video integrale e limite di <strong>1 rapina al giorno</strong> per gruppo.
+                </p>
+            </div>
+        </div>
+
+        <!-- COLONNA DESTRA: REGOLAMENTO DISCORD -->
+        <div class="column-card discord-card">
+            <div class="card-header">
+                <div class="card-icon">💬</div>
+                <div class="card-title-area">
+                    <h2>Regolamento Discord</h2>
+                    <p>Le norme da rispettare all'interno della community Discord di Messina RP.</p>
+                </div>
+            </div>
+
+            <div class="rule-section">
+                <h3>1. Linee Guida sulla Condotta</h3>
+                <div class="ban-box" style="background-color: rgba(56, 189, 248, 0.1); border-left-color: #38bdf8; color: #7dd3fc;">
+                    🔴 PROVVEDIMENTI: Timeout, Kick o Ban Permanente
+                </div>
+                <ul>
+                    <li>È rigorosamente vietato rivolgere insulti offensivi ai familiari o agli iscritti.</li>
+                    <li>Divieto assoluto di pubblicare materiale esplicito, volgare o inappropriato.</li>
+                    <li>Vige l'obbligo di portare rispetto reciproco verso l'amministrazione e l'utenza.</li>
+                    <li>È vietato diffondere informazioni private o dati sensibili altrui.</li>
+                    <li>Non è consentito inoltrare collegamenti esterni pericolosi o file non autorizzati.</li>
+                    <li>Si richiede in ogni circostanza l'uso di un lessico educato e civile.</li>
+                </ul>
+            </div>
+
+            <div class="rule-section">
+                <h3>2. Norme per i Canali e le Chat</h3>
+                <ul>
+                    <li>Pratiche di spam, flood o uso smodato di maiuscole sono severamente censurate.</li>
+                    <li>È tassativamente vietato l'uso di bestemmie o espressioni blasfeme.</li>
+                    <li>Nei canali vocali è vietato arrecare disturbo o molestare i partecipanti.</li>
+                    <li>⚠️ <strong>Nota:</strong> Chi effettua spam, flood o scrive in grande riceverà un TIMEOUT immediato.</li>
+                </ul>
+            </div>
+
+            <div class="rule-section">
+                <h3>3. Gestione e Ruoli dello Staff</h3>
+                <ul>
+                    <li>È vietato sollecitare o pretendere l'assegnazione di cariche amministrative.</li>
+                    <li>Le selezioni per entrare nello staff aprono esclusivamente su base necessità.</li>
+                    <li>Le direttive impartite dai moderatori e responsabili sono insindacabili.</li>
+                </ul>
+            </div>
+
+            <div class="rule-section">
+                <h3>4. Protocollo Assistenza (Ticket)</h3>
+                <ul>
+                    <li>Aprire un ticket di supporto unicamente in caso di reale necessità operativa.</li>
+                    <li>Evitare l'apertura di richieste multiple o duplicate per la medesima problematica.</li>
+                    <li>Mantenere un atteggiamento collaborativo e rispettoso durante l'assistenza.</li>
+                    <li>Le richieste inattive potranno essere archiviate d'ufficio dallo staff.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        ❤️ Grazie per far parte di <strong>Messina RP</strong> ❤️<br>
+        Seguendo queste semplici regole aiuterai a mantenere una community seria, ordinata e divertente per tutti.
+    </div>
+
+</body>
+</html>
